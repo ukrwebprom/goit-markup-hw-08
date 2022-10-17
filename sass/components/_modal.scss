@@ -1,0 +1,186 @@
+.backdrop {
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms $time-function;
+  }
+  .backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .modal {
+    position: absolute;
+    left:50%;
+    top:50%;
+  
+    width:calc(100% - 30px);
+    //height:450px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms $time-function;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 
+                0 1px 1px rgba(0, 0, 0, 0.14), 
+                0 1px 3px rgba(0, 0, 0, 0.12);
+    @media screen and (min-width:$tablet) {
+      width:450px;
+    }
+    @media screen and (min-width:$desktop) {
+      width:528px;
+    }
+  
+  }
+  .modal__close {
+    position: absolute;
+    top:8px;
+    right:8px;
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    &:hover .modal__icon{
+        fill: $accent-color;
+    }
+  }
+  
+  .modal__icon {
+    width:18px;
+    height:18px;
+    fill: black;
+    transition: fill 250ms $time-function;
+  }
+
+  .application-form {
+    padding:40px;
+    text-align: center;
+  }
+  .application-form__title {
+    padding:0;
+    margin:0 0 12px 0;
+    @include font(700, 20px, 0.03em, 1.15, none, none, $title-and-nav-text-color);
+    text-align: center;
+  }
+  .application-form__field {
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+  .application-form__label {
+    @include font(400, 12px, 0.01em, 1.17, none, none, $primary-text-color);
+    margin-bottom: 4px;
+    text-align: left;
+  }
+  .application-form__input {
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    outline:none;
+    transition: border-color 250ms $time-function;
+    &:focus{
+      border-color: $accent-color;
+    }
+  }
+  .application-form__textarea {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    resize:none;
+    outline:none;
+    transition: border-color 250ms $time-function;
+    &::placeholder {
+        color:var(--primary-text-color);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+      }
+    &:focus{
+      border-color: $accent-color;
+    }
+  }
+
+  .application-form__icon {
+    position:absolute;
+    top:29px;
+    left:12px;
+    width:18px;
+    height:18px;
+    fill:$title-and-nav-text-color;
+    transition: fill 250ms $time-function;
+  }
+
+  .application-form__confirm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    @media screen and (max-width:$phone) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @media screen and (min-width:$desktop) {
+      justify-content: center;
+    }
+  }
+  .application-form__confirm-text{
+    display:flex;
+    align-items: center;
+    cursor:pointer;
+    height: 24px;
+
+  }
+  .application-form__confirm-text,
+  .application-form__terms{
+    padding:0;
+    margin:0;
+    @include font(400, 12px, 0.01em, 1.15, none, none, $primary-text-color);
+    @media screen and (min-width:$desktop) {
+      font-size: 14px;
+    }
+  }
+  .application-form__terms{
+    color:$accent-color;
+    margin-left: 5px;
+    @media screen and (max-width:$phone) {
+      margin-left: 30px;
+    }
+  }
+  .application-form__checkbox{
+    border: 2px solid $title-and-nav-text-color;
+    border-radius: 2px;
+    display: block;
+    width:16px;
+    height:15px;
+  }
+  .application-form__native_checkbox {
+    -webkit-appearance:none;
+         -moz-appearance:none;
+              appearance:none;
+    &:checked + .application-form__checkbox-outline > .application-form__checkbox {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        background-image: url("../images/icon-check.svg");
+        background-size: cover;
+        background-origin: border-box;
+        }
+    &:focus + .application-form__checkbox-outline{
+        border: 2px solid $title-and-nav-text-color;
+        }
+  }
+  .application-form__checkbox-outline {
+    width: 22px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 4px;
+}

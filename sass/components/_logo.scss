@@ -1,0 +1,21 @@
+.logo {
+    color: $accent-color;
+    font-family: $logo-font;
+    text-decoration: none;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    //margin-right: 94px;
+    display: block;
+
+
+}
+.logo--lightback {
+    color:black;
+}
+.logo--darkback {
+    color:white;
+}
+.logo--left {
+    margin-right:94px;
+}

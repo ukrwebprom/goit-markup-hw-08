@@ -1,0 +1,205 @@
+.page-header{
+    
+    //background-color: aquamarine;
+    padding:0;
+    margin:0;
+    border-bottom: 1px solid #ECECEC;
+}
+.page-header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding-left:15px;
+    padding-right:15px;
+    margin: 0 auto;
+    max-width: $desktop;
+    @media screen and (min-width:768px) {
+        height:80px;
+    }
+}
+.logo {
+    color: $accent-color;
+    font-family: $logo-font;
+    text-decoration: none;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    display: block;
+
+
+}
+.logo--lightback {
+    color:black;
+}
+.logo--darkback {
+    color:white;
+}
+.logo--left {
+    margin-right:94px;
+}
+.menu-btn,
+.close-menu-btn {
+    width:40px;
+    height:40px;
+    border:0;
+    background-color: transparent;
+    cursor:pointer;
+    @media screen and (min-width:768px) {
+      display:none;   
+    }
+}
+.menu-btn__icon,
+.close-menu-btn__icon {
+    width:40px;
+    height:40px;
+}
+.navigation {
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    @media screen and (max-width:$tablet - 1){
+        position:absolute;
+        top:0;
+        left:0;
+        transform: translateY(0);
+        transition: transform 250ms $time-function;
+        flex-direction:column;
+        background-color: white;
+        padding:48px 40px;
+        &:not(.is-open){
+            transform: translateY(-100%);
+        }
+    }
+}
+
+.close-menu-btn {
+    position:absolute;
+    top:10px;
+    right:15px;
+}
+.menu {
+    display: flex;
+    flex-direction:column;
+    gap:min(6.66vw, 32px);
+    margin-bottom:auto;
+    @media screen and (min-width:$tablet){
+        flex-direction:row; 
+        align-items: center;
+        gap: 50px;
+        margin-bottom:0;
+    }
+}
+.menu__link {
+    position:relative;
+    @include font(500, min(9vw, 40px), 0.02em, 1.17, none, none, $title-and-nav-text-color);
+    @media screen and (min-width:$tablet){
+        @include font(500, 14px, 0.02em, 1.14, none, none, $title-and-nav-text-color);
+    }
+    padding:0;
+    margin:0;
+    &--current,
+    &:hover,
+    &:focus {
+        color:$accent-color;
+    }
+    transition: color 250ms $time-function;
+    &--current::after {
+        content:'';
+        position:absolute;
+        left:0;
+        bottom:0;
+        transform: translateY(100%);
+        display:block;
+        width:100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $accent-color;
+        @media screen and (min-width:$tablet) {
+            transform: translateY(32px);
+        }
+    }
+
+}
+.contacts {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+    gap:min(6.66vw, 32px);
+
+    @media screen and (min-width:$tablet) {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap:10px;
+        margin:0 0 0 auto;
+    }
+    @media screen and (min-width:$desktop) {
+        flex-direction: row;
+        gap:30px;
+        align-items: center;
+    }
+}
+.contacts__link {
+    @include font(500, 15px, 0.02em, 1.06, none, none, $primary-text-color);
+    transition: color 250ms $time-function;
+
+    &:hover,
+    &:focus,
+    &:hover .contacts__icon,
+    &:focus .contacts__icon {
+        color:$accent-color;
+        fill:$accent-color;
+    }
+}
+.contacts__link--phone{
+    @media screen and (max-width: $tablet - 1){
+        @include font(500, min(7vw, 34px), 0.02em, 1.17, none, none, $accent-color);
+    }
+}
+.contacts__link--email{
+    @media screen and (max-width: $tablet - 1){
+        @include font(500, min(5vw, 24px), 0.02em, 1.17, none, none, $primary-text-color);
+    }
+}
+.contacts__icon {
+    margin-right: 10px;
+    fill: $primary-text-color;
+    transition: fill 250ms $time-function;
+    @media screen and (max-width:767px){
+        display:none;
+    }
+}
+.contacts__icon--email{
+    width: 14px;
+    height: 10px;
+    @media screen and (min-width:$desktop) {
+        width: 16px;
+        height: 12px;
+    }
+}
+.contacts__icon--phone{
+    width: 10px;
+    height: 14px;
+    @media screen and (min-width:$desktop) {
+        width: 10px;
+        height: 16px;
+    }
+}
+.social-networks {
+    display:flex;
+    @media screen and (min-width: 768px){
+        display:none;
+    }
+    margin: 0 -10px;
+}
+.social-networks__item {
+    padding:0 10px;
+}
+.social-networks__item:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+.social-networks__link{
+    @include font(500, min(3.5vw, 18px), 0.02em, 1.22, none, none, $accent-color);
+}

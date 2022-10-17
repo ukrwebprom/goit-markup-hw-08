@@ -1,0 +1,32 @@
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.social__item{
+    display:flex;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    color:#AFB1B8;
+    justify-content:center;
+    align-items:center;
+    transition: background-color 250ms $time-function,
+                color 250ms $time-function;
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+        color:#FFF;
+        }
+  }
+.social__item--darkback {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFF; 
+}
+.social__icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}

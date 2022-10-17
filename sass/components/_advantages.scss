@@ -1,0 +1,54 @@
+.advantages {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media screen and (min-width:$desktop) {
+      padding-top:94px;
+      padding-bottom:0;
+    }
+    
+}
+
+.advantage-card {
+    margin:15px;
+    
+    &::before {
+        content: "";
+        display: block;
+        height: 120px;
+        background-color: $primary-background-color;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
+        margin-bottom: 30px;
+    }
+    @media screen and (min-width:$tablet) {
+      width:calc((100% - 4 * 15px)/2);
+    }
+    @media screen and (min-width:$desktop) {
+      width:calc((100% - 8 * 15px)/4);
+    }
+}
+.advantage-card__title {
+    @include font(700, 14px, 0.03em, 1.14, none, uppercase, $title-and-nav-text-color);
+    margin: 0 0 10px 0;
+    text-align: center;
+    @media screen and (min-width:$tablet) {
+      text-align: left;
+    }
+}
+.advantage-card__text {
+    @include font(400, 14px, 0.03em, 1.71, none, none, $primary-text-color);
+    margin: 0;
+}
+.icon-attention::before {
+    background-image: url(../images/antenna.svg);
+  }
+.icon-punctuality::before {
+    background-image: url(../images/clock.svg);
+  }
+.icon-planning::before {
+    background-image: url(../images/diagram.svg);
+  }
+.icon-technologies::before {
+    background-image: url(../images/astronaut.svg);
+  }

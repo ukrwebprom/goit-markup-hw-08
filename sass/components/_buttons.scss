@@ -1,0 +1,16 @@
+.button {
+    color: $button-text-color;
+    background-color: $accent-color;
+    @include font(700, 16px, 0.02em, 1.87, none, none, #fff);
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 4px;
+    transition: background-color 250ms $time-function;
+
+    &:hover,
+    &:focus {
+        background-color:$button-hover-color;
+    }
+}

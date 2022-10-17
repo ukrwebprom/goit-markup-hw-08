@@ -1,0 +1,31 @@
+.team{
+    background-color: $primary-background-color;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.team-member {
+    background-color: $background-color;
+    box-shadow: $card-shadow;
+    border-radius: 4px;
+    overflow: hidden;
+    margin:15px;
+    @media screen and (min-width:$tablet) {
+        width:calc((100% - 4 * 15px)/2);
+      }
+      @media screen and (min-width:$desktop) {
+        width:calc((100% - 8 * 15px)/4);
+      }
+  }
+  .team-member__info {
+    padding: 30px;
+    text-align: center;
+  }
+  .team-member__name{
+    @include font(500, 16px, 0.03em, 1.19, none, none, $title-and-nav-text-color);
+    margin: 0 0 10px 0;
+  }
+  .team-member__position{
+    @include font(400, 16px, 0.03em, 1.19, none, none, $primary-text-color);
+    margin: 0 0 16px 0;
+  }
