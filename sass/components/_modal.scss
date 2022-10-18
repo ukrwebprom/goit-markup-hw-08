@@ -7,7 +7,6 @@
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 250ms $time-function;
-    pointer-events: none;
     z-index:1;
   }
   .backdrop.is-hidden {
