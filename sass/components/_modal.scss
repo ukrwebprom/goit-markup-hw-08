@@ -7,6 +7,8 @@
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 250ms $time-function;
+    pointer-events: none;
+    z-index:1;
   }
   .backdrop.is-hidden {
     opacity: 0;
@@ -16,7 +18,7 @@
     position: absolute;
     left:50%;
     top:50%;
-  
+    z-index:2;
     width:calc(100% - 30px);
     //height:450px;
     transform: translate(-50%, -50%) scale(1);
@@ -61,11 +63,18 @@
   .application-form {
     padding:40px;
     text-align: center;
+    @media screen and (max-width: 350px) {
+      padding:20px;
+    }
   }
   .application-form__title {
     padding:0;
     margin:0 0 12px 0;
     @include font(700, 20px, 0.03em, 1.15, none, none, $title-and-nav-text-color);
+    @media screen and (max-width: 350px) {
+      font-size:16px;
+      margin:0 0 8px 0;
+    }
     text-align: center;
   }
   .application-form__field {
@@ -125,12 +134,16 @@
     align-items: center;
     margin-bottom: 30px;
     justify-content: flex-start;
+
+    @media screen and (min-width:$desktop) {
+      justify-content: center;
+    }
     @media screen and (max-width:$phone) {
       flex-direction: column;
       align-items: flex-start;
     }
-    @media screen and (min-width:$desktop) {
-      justify-content: center;
+    @media screen and (max-width:350px){
+      margin-bottom: 20px;
     }
   }
   .application-form__confirm-text{

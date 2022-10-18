@@ -34,11 +34,20 @@ body {
     margin: 0;
 }
 .container {
-    max-width: $desktop;
+    width:$phone;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (min-width:$tablet){
+        width:$tablet;
+    }
+    @media screen and (min-width:$desktop){
+        width:$desktop;
+    }
+    @media screen and (max-width:$phone){
+        width:100%;
+    }
 }
 img {
     display: block;

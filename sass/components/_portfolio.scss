@@ -37,10 +37,10 @@
 .portfolio-item {
     margin:15px;
     @media screen and (min-width:$tablet) {
-        width:calc((100% - 4 * 15px)/2);
+        width:354px;
       }
       @media screen and (min-width:$desktop) {
-        width:calc((100% - 6 * 15px)/3);
+        width:370px;
       }
   }
 .portfolio-card{
@@ -59,16 +59,12 @@
     }
 }
 .portfolio-card__picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aquamarine;
-    height: 294px;
+    display: block;
     position: relative;
     overflow: hidden;
 }
 .card__picture{
-    min-height: 294px;
+    //min-height: 294px;
 }
 .portfolio-card__content {
     padding: 20px 24px;
@@ -93,7 +89,7 @@
     padding: 24px;
     display: flex;
     align-items: center;
-    transform: translateY(100%);
+    transform: translateY(101%);
     transition: transform 250ms $time-function;
 
     @include font(400, 18px, 0.03em, 1.55, none, none, #fff);
