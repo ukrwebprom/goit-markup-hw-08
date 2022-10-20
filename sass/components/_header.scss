@@ -147,6 +147,8 @@
     }
 }
 .contacts__link {
+    display: flex;
+    align-items: center;
     @include font(500, 15px, 0.02em, 1.06, none, none, $primary-text-color);
     transition: color 250ms $time-function;
 
