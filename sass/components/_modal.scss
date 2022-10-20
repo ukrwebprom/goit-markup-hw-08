@@ -130,8 +130,7 @@
 
   .application-form__confirm {
     display: flex;
-    align-items: flex-start;
-    gap:8px;
+    align-items: center;
     margin-bottom: 30px;
     justify-content: flex-start;
 
@@ -150,9 +149,12 @@
     padding:0;
     margin:0;
     text-align: left;
-    @include font(400, 12px, 0.01em, 1.15, none, none, $primary-text-color);
+    @include font(400, 12px, 0.01em, 20px, none, none, $primary-text-color);
     @media screen and (min-width:$desktop) {
       font-size: 14px;
+    }
+    @media screen and (max-width:$phone){
+      line-height: 15px;
     }
   }
   .application-form__terms{
@@ -188,4 +190,5 @@
     min-width: 20px;
     height: 19px;
     border-radius: 4px;
+    margin-right:8px;
 }

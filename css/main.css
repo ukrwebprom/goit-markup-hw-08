@@ -1231,10 +1231,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 30px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -1265,7 +1264,7 @@ img {
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.01em;
-  line-height: 1.15;
+  line-height: 20px;
   text-decoration: none;
   text-transform: none;
   color: #757575;
@@ -1274,6 +1273,12 @@ img {
   .application-form__confirm-text,
 .application-form__terms {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .application-form__confirm-text,
+.application-form__terms {
+    line-height: 15px;
   }
 }
 
@@ -1319,6 +1324,7 @@ img {
   min-width: 20px;
   height: 19px;
   border-radius: 4px;
+  margin-right: 8px;
 }
 
 .portfolio {
