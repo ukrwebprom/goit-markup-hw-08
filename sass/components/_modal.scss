@@ -130,32 +130,26 @@
 
   .application-form__confirm {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap:8px;
     margin-bottom: 30px;
     justify-content: flex-start;
 
     @media screen and (min-width:$desktop) {
       justify-content: center;
     }
-    @media screen and (max-width:$phone) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
     @media screen and (max-width:350px){
       margin-bottom: 20px;
     }
   }
   .application-form__confirm-text{
-    display:flex;
-    align-items: center;
     cursor:pointer;
-    height: 24px;
-
   }
   .application-form__confirm-text,
   .application-form__terms{
     padding:0;
     margin:0;
+    text-align: left;
     @include font(400, 12px, 0.01em, 1.15, none, none, $primary-text-color);
     @media screen and (min-width:$desktop) {
       font-size: 14px;
@@ -163,13 +157,10 @@
   }
   .application-form__terms{
     color:$accent-color;
-    margin-left: 5px;
-    @media screen and (max-width:$phone) {
-      margin-left: 30px;
-    }
   }
   .application-form__checkbox{
     border: 2px solid $title-and-nav-text-color;
+    background-color: #fff;
     border-radius: 2px;
     display: block;
     width:16px;
@@ -187,12 +178,14 @@
         background-origin: border-box;
         }
     &:focus + .application-form__checkbox-outline{
-        border: 2px solid $title-and-nav-text-color;
+        background-color: black;
         }
   }
   .application-form__checkbox-outline {
-    width: 22px;
-    height: 20px;
-    margin-right: 8px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 19px;
     border-radius: 4px;
 }

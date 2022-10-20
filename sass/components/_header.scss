@@ -13,9 +13,14 @@
     padding-left:15px;
     padding-right:15px;
     margin: 0 auto;
-    max-width: $desktop;
-    @media screen and (min-width:768px) {
+    width:$phone;
+    //max-width: $desktop;
+    @media screen and (min-width:$tablet) {
         height:80px;
+        width:$tablet;
+    }
+    @media screen and (min-width:$desktop) {
+        width:$desktop;
     }
 }
 .logo {
