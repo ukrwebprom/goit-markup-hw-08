@@ -14,7 +14,9 @@
     padding-right:15px;
     margin: 0 auto;
     width:$phone;
-    //max-width: $desktop;
+    @media screen and (max-width:$phone){
+        width:100%;
+    }
     @media screen and (min-width:$tablet) {
         height:80px;
         width:$tablet;
